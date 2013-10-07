@@ -1,0 +1,13 @@
+# ignore backup files,
+# MS Office owner files,
+# AppleDouble resource forks,
+# vim swap files, etc.
+*~
+~$*
+._*
+*.swp
+.DS_Store
+Icon?
+Thumbs.db
+desktop.ini
+*.lock
