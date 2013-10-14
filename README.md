@@ -1,7 +1,12 @@
 CSC-155A-HW4
 ============
 
-find the newest file of a list of files
+Contents:
+--------
+* P1   -- Solution to problem 1
+* P1_2 -- used to debug a compilation problem
+* P2   -- Solution to problem 2
+  finds the newest file of a list of files
 
 Assignment:
 ----------
