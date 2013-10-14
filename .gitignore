@@ -11,3 +11,7 @@ Icon?
 Thumbs.db
 desktop.ini
 *.lock
+
+# ignore build directories
+*/build
+*/build/*

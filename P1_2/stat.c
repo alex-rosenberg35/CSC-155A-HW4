@@ -7,26 +7,15 @@
 #include <unistd.h>
 // #include "apue.h"
 
-/**
- * The lstat function is similar to stat, but when the named file is
- * a symbolic link, lstat returns information about the symbolic link,
- * not the file referenced by the symbolic link.
- */
- 
-// int stat(const char *restrict pathname, struct stat *restrict buf);
-// int lstat(const char *restrict pathname, struct stat *restrict buf);
-
-// based on Figure 4.3
 int main(int argc, char *argv[])
 {
+	int i;
 	struct stat buf;
 	char *ptr;
-	
-	for (int i=1; i<argc; i++)
-	{
+	for (i = 1; i < argc; i++) {
 		printf("%s: ", argv[i]);
 		if (stat(argv[i], &buf) < 0) {
-			perror("stat error");
+			perror("lstat error");
 			continue;
 		}
 		if (S_ISREG(buf.st_mode))
@@ -47,8 +36,5 @@ int main(int argc, char *argv[])
 			ptr = "** unknown mode **";
 		printf("%s\n", ptr);
 	}
-	
 	exit(0);
 }
-
-

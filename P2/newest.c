@@ -8,6 +8,7 @@
 #include <sys/wait.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <time.h>
 // #include "apue.h"
 
 #define DEBUG 1
@@ -31,10 +32,11 @@ int main(int argc, char *argv[])
 	for (int i=1; i<argc; i++)
 	{
 		printf("%s: ", argv[i]);
-		if (lstat(argv[i], &buf) < 0) {
-			perror("lstat error");
+		if (stat(argv[i], &buf) < 0) {
+			perror("stat error");
 			continue;
 		}
+		/*
 		if (S_ISREG(buf.st_mode))
 			ptr = "regular";
 		else if (S_ISDIR(buf.st_mode))
@@ -47,11 +49,14 @@ int main(int argc, char *argv[])
 			ptr = "fifo";
 		else if (S_ISLNK(buf.st_mode))
 			ptr = "symbolic link";
-		else if (S_ISSOCK(buf.st_mode))
-			ptr = "socket";
+		// else if (S_ISSOCK(buf.st_mode))
+		//	ptr = "socket";
 		else
 			ptr = "** unknown mode **";
 		printf("%s\n", ptr);
+		*/
+		// struct timespec buf.st_mtim
+		printf("tv_sec: ...\n", buf.st_mtim.tv_sec);
 	}
 	
 	exit(0);
