@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <errno.h>
 #include <sys/types.h>
+// define __USE_UNIX98 to avoid compilation warning:
+// implicit declaration of function ‘S_ISSOCK’
 #define __USE_UNIX98 1
 #include <sys/stat.h>
 #include <unistd.h>
