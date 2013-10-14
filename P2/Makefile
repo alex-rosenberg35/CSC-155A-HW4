@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS=­DLINUX ­ansi ­Wall ­D_GNU_SOURCE # g
 CPPFLAGS=
-BIN=newest
+BIN=mystat
 ODIR=build
 all:	$(ODIR)/$(BIN)
 $(ODIR):
